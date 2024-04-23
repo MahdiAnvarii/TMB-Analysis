@@ -59,6 +59,3 @@ total_mutations=$((indels_count + snps_count))
 # echo $total_mutations
 python TMB.py $total_mutations
 
-# Step 13 : MSI CAlculation
-msisensor scan -d /mnt/d/NGS//References/hg38.fa -o /mnt/d/NGS/References/MSIscan.bed
-msisensor msi -d /mnt/d/NGS/References/MSIscan.bed -t /mnt/d/NGS/Samples/P2/Aligned/SRR28000175_sorted_dedup_bqsr.bam -o /mnt/d/NGS/Samples/P2/Data/MSIoutput.bed
