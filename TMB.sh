@@ -55,7 +55,9 @@ bedtools bamtobed -i /mnt/d/NGS/Samples/P2/Aligned/SRR28000175_sorted_dedup_bqsr
 bedtools merge -i /mnt/d/NGS/Samples/P2/Data/SRR28000175_sorted_dedup_bqsr.bed > /mnt/d/NGS/Samples/P2/Data/SRR28000175_sorted_dedup_bqsr_merged.bed
 indels_count=$(grep -vc '^#' /mnt/d/NGS/Samples/P2/Results/analysis-ready-indels-GT-funcotated.vcf)
 snps_count=$(grep -vc '^#' /mnt/d/NGS/Samples/P2/Results/analysis-ready-snps-GT-funcotated.vcf)
+echo "Number of indels:" $indels_count
+echo "Number of snps:" $snps_count
 total_mutations=$((indels_count + snps_count))
-# echo $total_mutations
+echo "Number of total mutations" $total_mutations
 python TMB.py $total_mutations
 
